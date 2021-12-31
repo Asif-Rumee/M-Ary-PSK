@@ -24,13 +24,14 @@ def bit_differences(symbol_a, symbol_b):
 
 for i, M in enumerate(arrayOfM):
     k=np.log2(M)
+    EsN0dBs = 10*np.log10(k)+EbN0dBs 
     BER = np.zeros(len(EbN0dBs)) 
     inputSyms = np.random.randint(low=0, high = M, size=nSym)
     modem = mpsk_modem(M) 
     modulatedSyms = modem.modulate(inputSyms)
 
-    for j,EbN0dB in enumerate(EbN0dBs):
-        receivedSyms = awgn(modulatedSyms,EbN0dB)
+    for j,EsN0dB in enumerate(EsN0dBs):
+        receivedSyms = awgn(modulatedSyms,EsN0dB)
         detectedSyms = modem.demodulate(receivedSyms)
         total = 0
         for k,ds in enumerate(detectedSyms):
