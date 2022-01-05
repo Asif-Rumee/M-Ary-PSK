@@ -1,5 +1,5 @@
 """
-Performance analysis of M-ary PSK over AWGN channel by BER vs Eb/N0 chart.
+Performance analysis of M-ary PSK over AWGN channel by SER vs Eb/N0 chart.
 Author: Asif Rahman Rumee
 Date: 23/12/2021
 
